@@ -28,6 +28,7 @@ jobs:
       - name: Install and build and package
         env:
           version_number: ${{ steps.replace_version.outputs.value }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           npm install typescript -g
           tsc --version
