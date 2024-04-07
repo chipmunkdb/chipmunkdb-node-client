@@ -30,6 +30,7 @@ jobs:
           version_number: ${{ steps.replace_version.outputs.value }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
+          npm install
           npm install typescript -g
           tsc --version
           npm run-script build
